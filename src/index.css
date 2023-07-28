@@ -18,15 +18,17 @@ code {
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+  min-height: 100vh;
 }
 
 .notes-list {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem; /* old syntax */ /* grid-gap: 1rem; */ 
+  grid-template-columns: repeat(
+     auto-fit, 
+    minmax(250px, 1fr)
+  );
 }
-
-
 
 .note {
   background-color: rgb(176, 231, 231);
@@ -37,7 +39,13 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* min-width: 170px; */
+  white-space: pre-wrap;
+}
+
+/* make span in class .note not to extend in height when the text has lot of new lines, but it should be scrolled to view */
+.note span {
+  overflow: auto;
+  max-height: 100px;
 }
 
 .new-note {
@@ -48,6 +56,7 @@ textarea {
   border: none;
   resize: none;
   background-color: rgb(159, 216, 159);
+  overflow: hidden;
 }
 
 textarea:focus {
@@ -67,6 +76,34 @@ textarea:focus {
 }
 
 .note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  cursor: pointer; 
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 1.5em;
+}
+
+.search input {
+  border: none;
+  background-color: rgb(233, 233, 233);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;

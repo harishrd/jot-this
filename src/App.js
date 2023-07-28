@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import NotesList from "./components/NotesList";
+import Search from "./components/Search";
+import Header from "./components/Header";
 
-
-const App = () => { 
+const App = () => {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
@@ -23,9 +24,10 @@ const App = () => {
     }
   ]);
 
+  const [searchText, setSearchText] = useState('');
   // since the state lives in top level component, we need to pass the function down to the child component
   // using prop drilling we can pass the function down to the child component
-  const addNote = (text) => { 
+  const addNote = (text) => {
     const date = new Date();
     const newNote = {
       text: text,
@@ -36,9 +38,27 @@ const App = () => {
     setNotes(newNotes);
   };
 
+  // pass this deleteNote function down to the child component i.e., Note.js?
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  };
+
   return (
     <div className="container">
-      <NotesList notes={ notes } handleAddNote={ addNote } />
+      <Header
+        
+      />
+      <Search
+        handleSearchNote={setSearchText}
+      />
+      <NotesList
+        notes={notes.filter((note) =>
+          note.text.toLowerCase().includes(searchText)
+        )}
+        handleAddNote={addNote}
+        handleDeleteNote={deleteNote}
+      />
     </div>
   );
 
