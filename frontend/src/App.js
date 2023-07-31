@@ -32,7 +32,6 @@ const App = () => {
       date: date,
       id: nanoid(),
     };
-    // console.log(newNote);
 
     try {
       const response = await axios.post("http://localhost:8000/notes", newNote);
@@ -43,18 +42,15 @@ const App = () => {
   };
 
   // Function to delete a note
-  const deleteNote = async (_id) => {
-    // console.log("Deleting note with _id:", _id); // Make sure _id is correct
+  const deleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/notes/${_id}`,{method: 'DELETE'});
-      const newNotes = notes.filter((note) => note._id !== _id); // Use _id field here
+      await axios.delete(`http://localhost:8000/notes/${id}`);
+      const newNotes = notes.filter((note) => note.id !== id);
       setNotes(newNotes);
     } catch (error) {
       console.error(error);
     }
   };
-
-
 
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
