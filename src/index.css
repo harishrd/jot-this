@@ -9,7 +9,7 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    monospace ;
 }
 
 .container {
@@ -78,6 +78,8 @@ code {
 .note span {
   overflow: auto;
   max-height: 100px;
+  font-weight: 500;
+  color: #5f5d5d;
 }
 
 .new-note {

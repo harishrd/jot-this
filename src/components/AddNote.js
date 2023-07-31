@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 const AddNote = ({ handleAddNote }) => {
     const [noteText, setNoteText] = useState('');
@@ -30,7 +31,8 @@ const AddNote = ({ handleAddNote }) => {
             />
             <div className="note-footer">
                 <small>{characterLimit - noteText.length} remaining</small>
-                <button className="save" onClick={handleSaveClick}>Save</button>
+                {/* <button className="save" onClick={handleSaveClick}>Save</button> */}
+                <Button className="save" variant="contained" onClick={handleSaveClick}>Save</Button>
             </div>
         </div>
     );
