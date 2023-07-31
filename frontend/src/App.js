@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 import axios from "axios";
 
+
 const App = () => {
   // State variables
   const [notes, setNotes] = useState([]); // State to store notes fetched from the backend
