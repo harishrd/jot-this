@@ -1,4 +1,6 @@
 import React from "react";
+import { DarkModeToggle } from '@anatoliygatt/dark-mode-toggle';
+
 
 const Header = ({ handleToggleDarkMode }) => { 
     return (
@@ -14,6 +16,7 @@ const Header = ({ handleToggleDarkMode }) => {
             >
                 Toggle Mode
             </button>
+            
         </div>
     );
 };

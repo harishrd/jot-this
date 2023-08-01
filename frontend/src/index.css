@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Caveat&display=swap');
 
 body {
   margin: 0;
@@ -8,6 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url("https://images.unsplash.com/photo-1588345921489-f61ad896c562?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
+  font-family: "Caveat";
+  font-weight: 400;
+  font-size: 20px;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 code {
@@ -28,6 +33,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 15px 0 15px 0;
   /* text-align: center; */
   /* vertical-align: middle; */
 }
@@ -35,8 +41,9 @@ code {
 .header h1 {
   font-family: "Borel";
   margin: 0;
-  /* vertical-align: middle; */
+  vertical-align: middle;
   /* line-height: 100px; */
+  margin-bottom: -20px;
 }
 .dark-mode {
   background-color: black;
@@ -87,6 +94,9 @@ code {
   position: relative;
   /* transition: all 0.3s; */
   opacity: 34;
+  /* font-family: "Caveat";
+  font-weight: 600;
+  font-size: 18px; */
 }
 
 .edit-options {
@@ -116,7 +126,9 @@ textarea {
   resize: none;
   background-color: rgb(159, 216, 159);
   overflow: hidden;
-  /* transition: all 0.3s; */
+  font-family: "Caveat";
+  font-weight: 400;
+  font-size: 20px; 
 }
 
 textarea:focus {
@@ -159,7 +171,6 @@ textarea:focus {
 
 .editing .save,
 .note:hover .save {
-  
   display: inline-block; 
 }
 
