@@ -42,9 +42,9 @@ const App = () => {
     }
   };
 
-  // Function to delete a note
+
   const deleteNote = async (_id) => {
-    // console.log("Deleting note with _id:", _id); // Make sure _id is correct
+    // console.log("Deleting note with _id:", _id); 
     try {
       await axios.delete(`http://localhost:8000/notes/${_id}`,{method: 'DELETE'});
       const newNotes = notes.filter((note) => note._id !== _id); // Use _id field here
@@ -55,7 +55,7 @@ const App = () => {
   };
 
 
-  // Function to edit a note
+
   const editNote = async (_id, newText) => {
     try {
       await axios.put(`http://localhost:8000/notes/${_id}`, { text: newText });

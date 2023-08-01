@@ -82,18 +82,17 @@ code {
 
 .note {
   background-color: rgb(176, 231, 231);
-  /* background-color: rgb(254, 247, 181); */
   margin-bottom: 10px;
   border-radius: 15px;
   padding: 1rem;
-  min-height: 170px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
   position: relative;
   /* transition: all 0.3s; */
-  opacity: 34;
+  opacity: .9;
   /* font-family: "Caveat";
   font-weight: 600;
   font-size: 18px; */
@@ -113,8 +112,9 @@ code {
 
 /* make span in class .note not to extend in height when the text has lot of new lines, but it should be scrolled to view */
 .note span {
-  overflow: auto;
-  max-height: 100px;
+  overflow: scroll;
+  max-height: 200px;
+  padding-bottom: 15px;
 }
 
 .new-note {

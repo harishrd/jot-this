@@ -24,7 +24,7 @@ const Note = ({ _id, text, date, handleDeleteNote, handleEditNote }) => {
                 <span>{text}</span>
             ) : (
                 <textarea
-                    rows="4"
+                    rows="6"
                     cols="10"
                     value={editedText}
                     onChange={(e) => setEditedText(e.target.value)}
