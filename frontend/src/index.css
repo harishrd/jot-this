@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("https://images.unsplash.com/photo-1588345921489-f61ad896c562?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"); */
 }
 
 code {
@@ -64,6 +65,7 @@ code {
 
 .note {
   background-color: rgb(176, 231, 231);
+  /* background-color: rgb(254, 247, 181); */
   margin-bottom: 10px;
   border-radius: 15px;
   padding: 1rem;
@@ -72,6 +74,21 @@ code {
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
+  position: relative;
+  /* transition: all 0.3s; */
+  opacity: 34;
+}
+
+.edit-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.save {
+  display: none;
 }
 
 /* make span in class .note not to extend in height when the text has lot of new lines, but it should be scrolled to view */
@@ -89,10 +106,12 @@ textarea {
   resize: none;
   background-color: rgb(159, 216, 159);
   overflow: hidden;
+  /* transition: all 0.3s; */
 }
 
 textarea:focus {
   outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .save {
@@ -113,6 +132,41 @@ textarea:focus {
   justify-content: space-between;
 }
 
-.delete-icon {
+.icon {
   cursor: pointer; 
+}
+
+.editing.note {
+  background-color: rgb(159, 216, 159);
+}
+
+.editing .edit-icon,
+.editing .delete-icon,
+.note:hover .edit-icon,
+.note:hover .delete-icon {
+  display: inline-block;
+}
+
+.editing .save,
+.note:hover .save {
+  
+  display: inline-block; 
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon.edit-icon,
+.icon.delete-icon {
+
+  display: none; 
+}
+
+.icon.save {
+  display: none; 
+}
+
+.toggle {
+  display: initial;
 }
