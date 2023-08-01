@@ -44,4 +44,25 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
+
+
+// Update a note
+router.put("/:id", async (req, res) => {
+    try {
+        const note = await Note.findById(req.params.id);
+        if (!note) {
+            return res.status(404).json({ message: "Note not found" });
+        }
+
+        note.text = req.body.text || note.text;
+        note.date = req.body.date || note.date;
+
+        const updatedNote = await note.save();
+        res.json(updatedNote);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
+});
+
 module.exports = router;

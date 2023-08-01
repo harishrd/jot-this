@@ -55,6 +55,18 @@ const App = () => {
   };
 
 
+  // Function to edit a note
+  const editNote = async (_id, newText) => {
+    try {
+      await axios.put(`http://localhost:8000/notes/${_id}`, { text: newText });
+      setNotes((prevNotes) =>
+        prevNotes.map((note) => (note._id === _id ? { ...note, text: newText } : note))
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
@@ -67,6 +79,7 @@ const App = () => {
           )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
+          handleEditNote={editNote} // Pass the editNote function to NotesList
         />
       </div>
     </div>
