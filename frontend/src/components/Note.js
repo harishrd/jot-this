@@ -36,20 +36,22 @@ const Note = ({ _id, text, date, handleDeleteNote, handleEditNote }) => {
             )}
             <div className="note-footer">
                 <small>{date}</small>
-                {!isEditing ? (
-                    <>
-                        <MdEdit onClick={onEditClick} className="edit-icon" size="1.3em" />
-                        <MdDeleteForever
-                            onClick={onDeleteClick}
-                            className="delete-icon"
-                            size="1.3em"
-                        />
-                    </>
-                ) : (
-                    <button className="save" onClick={onSaveClick}>
-                        Save
-                    </button>
-                )}
+                <div className="edit-options">
+                    {!isEditing ? (
+                        <>
+                            <MdEdit onClick={onEditClick} className="edit-icon" size="1.3em" />
+                            <MdDeleteForever
+                                onClick={onDeleteClick}
+                                className="delete-icon"
+                                size="1.3em"
+                            />
+                        </>
+                    ) : (
+                        <button className="save" onClick={onSaveClick}>
+                            Save
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );
